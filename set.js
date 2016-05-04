@@ -5,8 +5,11 @@
 // Task 3: Then, once you've got arbitrary dimensions, extend your solution to handle an arbitrary size for the dimensions (e.g. there are now four possible shapes, four colors, four of every dimension). You may assume the number of cards remains three, or solve for an arbitrary number greater than three for extra credit.
 
 var dimentions = ["color","number","shape","shading"];
-var dimentionNum = 4; 
-var cardNum = 3;
+//an arbitrary size for the dimensions, can change the value.
+var dimentionNum = 3;
+//the number of cards to form a set. here is a const 3.
+var cardNum = 3; 
+//the total numbers of cards collection, can change the value. 
 var cardsdeck = 15;
 var dimentionValues = {
 	color: [],
@@ -14,8 +17,13 @@ var dimentionValues = {
 	shape:[],
 	shading:[]
 };
-var dimention = [];
 
+var dimention = [];
+//generate a random number in a range of [0, dimentionNum];
+function getRandomArbitrary() {
+  return Math.floor(Math.random() * dimentionNum);
+}
+/*Set an array of all possible values for each demention. A card has four dimensions, color,number,shape,shading, and each demention has 'dimentionNum' possible values. here I use an array of ["1","2","3",....,"dimentionNum"] to represent a set of all possible values of a dimention.  */ 
 for (var key in dimentionValues) {
 	if (dimentionValues.hasOwnProperty(key)) {
 	for(var j =1; j<= dimentionNum; j++) {
@@ -24,12 +32,14 @@ for (var key in dimentionValues) {
 	dimention.push(dimentionValues[key]);
 	}
 }
+//consturctor function for a card. 
 function Card(color,number,shape,shading) {
 	this.color = color;
 	this.number = number;
 	this.shape = shape;
 	this.shading = shading;
 }
+//Generate a collection of cards using Card consturctor function. 
 function collection (cardsNumber){
 	var cards = [];
 	for (var i=0; i<cardsNumber; i++){
@@ -37,9 +47,7 @@ function collection (cardsNumber){
 	}
 	return cards;
 }
-function getRandomArbitrary() {
-  return Math.floor(Math.random() * dimentionNum);
-}
+//Take an array of the demention value for each cards, return true when all values are the same, return flase when all values are different from each other.  
 function allsameOrAlldifferent(dimentionArr){
 	function isDifferent(dimentionArr) {
 		if (dimentionArr.length === 0) return true;
@@ -54,6 +62,7 @@ function allsameOrAlldifferent(dimentionArr){
 	else if (isSame(dimentionArr)) return "same";
 	else return;
 }
+//Take an array of three cards, and check if the cards can be a set. 
 function isSet(cardsToCheck) {
 	var result = [];
 	var dementionSet = [];
@@ -75,6 +84,7 @@ function isSet(cardsToCheck) {
 		return true;
 	}
 }
+//Generate different combination of three cards from the collection of cards, and return an array of all possible set.  
 function setCollection(cards) {
 	var set = {};
 	var count = 0;
@@ -93,6 +103,7 @@ function setCollection(cards) {
 	if (set.length === 0){ console.log("no set cobmination");}
 	else { return set;}
 }
+
 var cards1 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'},{color: '3', number: '1', shape: '2', shading: '1'},{color: '3', number: '3', shape: '3', shading: '3'}];
 var cards2 = collection(cardsdeck);
 
@@ -104,7 +115,7 @@ console.log("input cards2,");
 console.log(cards2);
 console.log("set", setCollection(cards2));
 
-//un-comment below when testing the case of dimentionNum = 4;
+//remove comments (double-slash) below when testing the case of dimentionNum = 4;
 // var cards3 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'},{color: '3', number: '1', shape: '2', shading: '1'},{color: '3', number: '3', shape: '3', shading: '3'},{color: '3', number: '2', shape: '1', shading: '4'}];
 // console.log("input cards3,");
 // console.log(cards3);

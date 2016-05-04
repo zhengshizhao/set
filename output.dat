@@ -1,0 +1,73 @@
+input cards1:
+[ { color: '3', number: '2', shape: '1', shading: '2' },
+  { color: '3', number: '2', shape: '1', shading: '3' },
+  { color: '3', number: '2', shape: '1', shading: '1' },
+  { color: '3', number: '1', shape: '2', shading: '1' },
+  { color: '3', number: '3', shape: '3', shading: '3' } ]
+set { '1': 
+   [ { color: '3', number: '2', shape: '1', shading: '2' },
+     { color: '3', number: '2', shape: '1', shading: '3' },
+     { color: '3', number: '2', shape: '1', shading: '1' } ],
+  '2': 
+   [ { color: '3', number: '2', shape: '1', shading: '2' },
+     { color: '3', number: '1', shape: '2', shading: '1' },
+     { color: '3', number: '3', shape: '3', shading: '3' } ] }
+input cards2,
+[ { color: 2, number: 1, shape: 3, shading: 3 },
+  { color: 2, number: 1, shape: 2, shading: 1 },
+  { color: 1, number: 2, shape: 3, shading: 2 },
+  { color: 2, number: 1, shape: 3, shading: 2 },
+  { color: 2, number: 2, shape: 3, shading: 2 },
+  { color: 2, number: 1, shape: 1, shading: 2 },
+  { color: 3, number: 3, shape: 2, shading: 1 },
+  { color: 1, number: 3, shape: 2, shading: 2 },
+  { color: 3, number: 3, shape: 1, shading: 3 },
+  { color: 3, number: 3, shape: 2, shading: 1 },
+  { color: 1, number: 2, shape: 1, shading: 1 },
+  { color: 1, number: 3, shape: 3, shading: 2 },
+  { color: 1, number: 3, shape: 1, shading: 1 },
+  { color: 1, number: 3, shape: 3, shading: 2 },
+  { color: 3, number: 2, shape: 3, shading: 2 } ]
+set { '1': 
+   [ { color: 1, number: 2, shape: 3, shading: 2 },
+     { color: 2, number: 2, shape: 3, shading: 2 },
+     { color: 3, number: 2, shape: 3, shading: 2 } ],
+  '2': 
+   [ { color: 2, number: 1, shape: 1, shading: 2 },
+     { color: 1, number: 3, shape: 2, shading: 2 },
+     { color: 3, number: 2, shape: 3, shading: 2 } ],
+  '3': 
+   [ { color: 2, number: 1, shape: 1, shading: 2 },
+     { color: 3, number: 3, shape: 1, shading: 3 },
+     { color: 1, number: 2, shape: 1, shading: 1 } ] }
+input cards3,
+[ { color: '3', number: '2', shape: '1', shading: '2' },
+  { color: '3', number: '2', shape: '1', shading: '3' },
+  { color: '3', number: '2', shape: '1', shading: '1' },
+  { color: '3', number: '1', shape: '2', shading: '1' },
+  { color: '3', number: '3', shape: '3', shading: '3' },
+  { color: '3', number: '2', shape: '1', shading: '4' } ]
+set { '1': 
+   [ { color: '3', number: '2', shape: '1', shading: '2' },
+     { color: '3', number: '2', shape: '1', shading: '3' },
+     { color: '3', number: '2', shape: '1', shading: '1' } ],
+  '2': 
+   [ { color: '3', number: '2', shape: '1', shading: '2' },
+     { color: '3', number: '2', shape: '1', shading: '3' },
+     { color: '3', number: '2', shape: '1', shading: '4' } ],
+  '3': 
+   [ { color: '3', number: '2', shape: '1', shading: '2' },
+     { color: '3', number: '2', shape: '1', shading: '1' },
+     { color: '3', number: '2', shape: '1', shading: '4' } ],
+  '4': 
+   [ { color: '3', number: '2', shape: '1', shading: '2' },
+     { color: '3', number: '1', shape: '2', shading: '1' },
+     { color: '3', number: '3', shape: '3', shading: '3' } ],
+  '5': 
+   [ { color: '3', number: '2', shape: '1', shading: '3' },
+     { color: '3', number: '2', shape: '1', shading: '1' },
+     { color: '3', number: '2', shape: '1', shading: '4' } ],
+  '6': 
+   [ { color: '3', number: '1', shape: '2', shading: '1' },
+     { color: '3', number: '3', shape: '3', shading: '3' },
+     { color: '3', number: '2', shape: '1', shading: '4' } ] }
