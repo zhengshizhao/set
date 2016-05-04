@@ -5,11 +5,11 @@
 // Task 3: Then, once you've got arbitrary dimensions, extend your solution to handle an arbitrary size for the dimensions (e.g. there are now four possible shapes, four colors, four of every dimension). You may assume the number of cards remains three, or solve for an arbitrary number greater than three for extra credit.
 
 var dimentions = ["color","number","shape","shading"];
-//an arbitrary size for the dimensions, can change the value.
+//An arbitrary size for the dimensions, can change the value.
 var dimentionNum = 3;
-//the number of cards to form a set. here is a const 3.
+//The number of cards to form a set. here is a const 3.
 var cardNum = 3; 
-//the total numbers of cards collection, can change the value. 
+//The total numbers of cards collection, can change the value. 
 var cardsdeck = 15;
 var dimentionValues = {
 	color: [],
@@ -19,9 +19,9 @@ var dimentionValues = {
 };
 
 var dimention = [];
-//generate a random number in a range of [0, dimentionNum];
+//To generate a random number in a range of [0, dimentionNum];
 function getRandomArbitrary() {
-  return Math.floor(Math.random() * dimentionNum);
+    return Math.floor(Math.random() * dimentionNum);
 }
 /*Set an array of all possible values for each demention. A card has four dimensions, color,number,shape,shading, and each demention has 'dimentionNum' possible values. here I use an array of ["1","2","3",....,"dimentionNum"] to represent a set of all possible values of a dimention.  */ 
 for (var key in dimentionValues) {
@@ -32,7 +32,7 @@ for (var key in dimentionValues) {
 	dimention.push(dimentionValues[key]);
 	}
 }
-//consturctor function for a card. 
+//Consturctor function for a card. 
 function Card(color,number,shape,shading) {
 	this.color = color;
 	this.number = number;
@@ -100,8 +100,8 @@ function setCollection(cards) {
 			}
 		}
 	}
-	if (set.length === 0){ console.log("no set cobmination");}
-	else { return set;}
+	if (set.length === 0){console.log("no set cobmination");}
+	else {return set;}
 }
 
 var cards1 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'},{color: '3', number: '1', shape: '2', shading: '1'},{color: '3', number: '3', shape: '3', shading: '3'}];
@@ -115,9 +115,8 @@ console.log("input cards2,");
 console.log(cards2);
 console.log("set", setCollection(cards2));
 
-//remove comments (double-slash) below when testing the case of dimentionNum = 4;
-// var cards3 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'},{color: '3', number: '1', shape: '2', shading: '1'},{color: '3', number: '3', shape: '3', shading: '3'},{color: '3', number: '2', shape: '1', shading: '4'}];
-// console.log("input cards3,");
-// console.log(cards3);
-// console.log("set", setCollection(cards3));
+var cards3 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'},{color: '3', number: '1', shape: '2', shading: '1'},{color: '3', number: '3', shape: '3', shading: '3'},{color: '3', number: '2', shape: '1', shading: '4'}];
+console.log("input cards3,");
+console.log(cards3);
+console.log("set", setCollection(cards3));
 
