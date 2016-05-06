@@ -104,8 +104,7 @@ function setCollection(cards) {
 			}
 		}
 	}
-	if (set.length === 0){console.log("no set cobmination");}
-	else {return set;}
+	return set;
 }
 
 var cards1 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'},{color: '3', number: '1', shape: '2', shading: '1'},{color: '3', number: '3', shape: '3', shading: '3'}];

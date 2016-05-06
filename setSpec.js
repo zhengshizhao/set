@@ -79,8 +79,14 @@ describe("SET",function(){
 			});
 			it("when all dimentions are different", function(){	
 				expect(isSet(cards5)).toBeFalsy();
-			});
-				
+			});			
+		});
+	});
+	describe("setCollection",function(){ 
+		var cards = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'},{color: '3', number: '1', shape: '2', shading: '1'},{color: '3', number: '3', shape: '3', shading: '3'}];
+		var sets = setCollection(cards);
+		it("shout return all the possible sets of a cards collection", function(){
+			expect(Object.keys(sets).length).toBe(2);
 		});
 	});
 
