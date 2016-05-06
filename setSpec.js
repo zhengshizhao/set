@@ -53,29 +53,35 @@ describe("SET",function(){
 
 	});
 	describe("isSet",function(){
-		describe("check if cards in an array are a set", function(){
-			var cards1 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'}];
-			var card2 = [{color: '3', number: '1', shape: '1', shading: '1'},{color: '3', number: '2', shape: '2', shading: '2'},{color: '3', number: '3', shape: '3', shading: '3'}];
+		var cards1 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'}];
+		var card2 = [{color: '3', number: '1', shape: '1', shading: '1'},{color: '3', number: '2', shape: '2', shading: '2'},{color: '3', number: '3', shape: '3', shading: '3'}];
 
-			var cards3 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '2', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'}];
-			var cards4 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '2'}];
-			var cards5 = [{color: '3', number: '3', shape: '3', shading: '3'},{color: '2', number: '2', shape: '2', shading: '2'},{color: '1', number: '1', shape: '1', shading: '1'}];
+		var cards3 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '2', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'}];
+		var cards4 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '2'}];
+		var cards5 = [{color: '3', number: '3', shape: '3', shading: '3'},{color: '2', number: '2', shape: '2', shading: '2'},{color: '1', number: '1', shape: '1', shading: '1'}];
 
-			it("shoud return true if three cards have same values in one dimention but different in the other dimentions",function(){
-				expect(isSet(cards2)).toBe(true);
-			});
-			it("shoud return true if three cards have different values in one dimention but same in the other dimentions",function(){
+		describe("should return true if three cards are a set", function(){
+			
+
+			it("when three cards have different values in one dimention but same in the other dimentions",function(){
 				expect(isSet(cards1)).toBe(true);
 			});
-				
-			it("shoud return false if input cards are not a set", function(){	
-				expect(isSet(cards3)).toBe(false);
-				expect(isSet(cards4)).toBe(false);
-				expect(isSet(cards5)).toBe(false);
+			it("when three cards have same values in one dimention but different in the other dimentions",function(){
+				expect(isSet(cards2)).toBe(true);
 			});
-
+		});	
+		describe("should return false if three cards are not a set", function(){			
+			it("when ", function(){	
+				expect(isSet(cards3)).toBeFalsy();
+			});
+			it("when ", function(){	
+				expect(isSet(cards4)).toBeFalsy();
+			});
+			it("when ", function(){	
+				expect(isSet(cards5)).toBeFalsy();
+			});
+				
 		});
-
 	});
 
 });
