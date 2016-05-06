@@ -20,7 +20,7 @@ var dimentionValues = {
 
 var dimention = [];
 //To generate a random number in a range of [0, dimentionNum];
-function getRandomArbitrary() {
+function getRandomArbitrary(dimentionNum) {
     return Math.floor(Math.random() * dimentionNum);
 }
 /*Set an array of all possible values for each demention. A card has four dimensions, color,number,shape,shading, and each demention has 'dimentionNum' possible values. here I use an array of ["1","2","3",....,"dimentionNum"] to represent a set of all possible values of a dimention.  */ 
@@ -43,7 +43,7 @@ function Card(color,number,shape,shading) {
 function collection (cardsNumber){
 	var cards = [];
 	for (var i=0; i<cardsNumber; i++){
-		cards.push(new Card(dimentionValues.color[getRandomArbitrary()], dimentionValues.number[getRandomArbitrary()], dimentionValues.shape[getRandomArbitrary()],dimentionValues.shading[getRandomArbitrary()]));
+		cards.push(new Card(dimentionValues.color[getRandomArbitrary(dimentionNum)], dimentionValues.number[getRandomArbitrary(dimentionNum)], dimentionValues.shape[getRandomArbitrary(dimentionNum)],dimentionValues.shading[getRandomArbitrary(dimentionNum)]));
 	}
 	return cards;
 }
