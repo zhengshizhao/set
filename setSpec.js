@@ -54,7 +54,7 @@ describe("SET",function(){
 	});
 	describe("isSet",function(){
 		var cards1 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'}];
-		var card2 = [{color: '3', number: '1', shape: '1', shading: '1'},{color: '3', number: '2', shape: '2', shading: '2'},{color: '3', number: '3', shape: '3', shading: '3'}];
+		var cards2 = [{color: '3', number: '1', shape: '1', shading: '1'},{color: '3', number: '2', shape: '2', shading: '2'},{color: '3', number: '3', shape: '3', shading: '3'}];
 
 		var cards3 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '2', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'}];
 		var cards4 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '2'}];

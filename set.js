@@ -54,7 +54,7 @@ function collection (cardsNumber){
 //Take an array of the demention value for each cards, return true when all values are the same, return flase when all values are different from each other.  
 function allsameOrAlldifferent(dimentionArr){
 	function isDifferent(dimentionArr) {
-		if (dimentionArr.length === 0) return true;
+		if (dimentionArr.length === 1) return true;
 		if (dimentionArr.slice(1).some(function(ele){return ele === dimentionArr[0];})) return false;
 		else {return isDifferent(dimentionArr.slice(1));}
 	}
