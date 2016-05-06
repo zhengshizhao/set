@@ -71,13 +71,13 @@ describe("SET",function(){
 			});
 		});	
 		describe("should return false if three cards are not a set", function(){			
-			it("when ", function(){	
+			it("when some demetions are same, some are different", function(){	
 				expect(isSet(cards3)).toBeFalsy();
 			});
-			it("when ", function(){	
+			it("when all dimentions are same", function(){	
 				expect(isSet(cards4)).toBeFalsy();
 			});
-			it("when ", function(){	
+			it("when all dimentions are different", function(){	
 				expect(isSet(cards5)).toBeFalsy();
 			});
 				
