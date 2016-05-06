@@ -19,17 +19,21 @@ var dimentionValues = {
 };
 
 var dimention = [];
+setDimentions(dimentionValues);
 //To generate a random number in a range of [0, dimentionNum];
 function getRandomArbitrary(dimentionNum) {
     return Math.floor(Math.random() * dimentionNum);
 }
 /*Set an array of all possible values for each demention. A card has four dimensions, color,number,shape,shading, and each demention has 'dimentionNum' possible values. here I use an array of ["1","2","3",....,"dimentionNum"] to represent a set of all possible values of a dimention.  */ 
-for (var key in dimentionValues) {
-	if (dimentionValues.hasOwnProperty(key)) {
-	for(var j =1; j<= dimentionNum; j++) {
-		dimentionValues[key].push(j);
-	}
-	dimention.push(dimentionValues[key]);
+function setDimentions (dimentionValues){
+	for (var key in dimentionValues) {
+		if (dimentionValues.hasOwnProperty(key)) {
+		for(var j =1; j<= dimentionNum; j++) {
+			dimentionValues[key].push(j);
+		}
+		dimention.push(dimentionValues[key]);
+
+		}
 	}
 }
 //Consturctor function for a card. 

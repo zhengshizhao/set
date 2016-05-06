@@ -4,7 +4,7 @@ describe("SET",function(){
 	var cardNum = 3;
 	var cardsdeck = 15;
 
-	describe("getRandomArbitrary function", function() {	  
+	describe("getRandomArbitrary", function() {	  
 	  	it("should generate random number between 0-dimentionNum", function() {
 	  		var number1 = getRandomArbitrary(dimentionNum);
 	  		var number2 = getRandomArbitrary(dimentionNum);
@@ -27,12 +27,55 @@ describe("SET",function(){
 		    expect(card1.shading).toEqual("striped");
 	    });
 	});
-	describe("collection function", function(){
+	describe("collection", function(){
+			var cardCollection1 = collection(3);
+			var cardCollection2 = collection(15);
 		it("should generate a collection of cards with a given number", function(){
-			var cardCollection = collection(3);
-			expect(Array.isArray(cardCollection)).toBe(true);
-			expect(cardCollection.length).toEqual(3);
-			expect([1,2,3,4]).toContain(cardCollection[0].number);
+			expect(Array.isArray(cardCollection1)).toBe(true);
+			expect(cardCollection1.length).toEqual(3);
+			expect(cardCollection2.length).toEqual(15);
+			expect([1,2,3,4]).toContain(cardCollection1[0].number);
 		});
 	});
+	describe("allsameOrAlldifferent",function(){
+		var dimentions1 = [1,1,1];
+		var dimentions2 = [1,1,3];
+		var dimentions3 = [1,2,3];
+		it("should retun same if all elements in an array are all the same", function(){
+			expect(allsameOrAlldifferent(dimentions1)).toEqual("same");
+		});
+		it("should retun undefined if all elements in an array are not the same nor different", function(){
+			expect(allsameOrAlldifferent(dimentions2)).toBeUndefined();
+		});
+		it("should retun different if all elements in an array are the different", function(){
+			expect(allsameOrAlldifferent(dimentions3)).toEqual("different");
+		});
+
+	});
+	describe("isSet",function(){
+		describe("check if cards in an array are a set", function(){
+			var cards1 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'}];
+			var card2 = [{color: '3', number: '1', shape: '1', shading: '1'},{color: '3', number: '2', shape: '2', shading: '2'},{color: '3', number: '3', shape: '3', shading: '3'}];
+
+			var cards3 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '2', shading: '3'},{color: '3', number: '2', shape: '1', shading: '1'}];
+			var cards4 = [{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '2'},{color: '3', number: '2', shape: '1', shading: '2'}];
+			var cards5 = [{color: '3', number: '3', shape: '3', shading: '3'},{color: '2', number: '2', shape: '2', shading: '2'},{color: '1', number: '1', shape: '1', shading: '1'}];
+
+			it("shoud return true if three cards have same values in one dimention but different in the other dimentions",function(){
+				expect(isSet(cards2)).toBe(true);
+			});
+			it("shoud return true if three cards have different values in one dimention but same in the other dimentions",function(){
+				expect(isSet(cards1)).toBe(true);
+			});
+				
+			it("shoud return false if input cards are not a set", function(){	
+				expect(isSet(cards3)).toBe(false);
+				expect(isSet(cards4)).toBe(false);
+				expect(isSet(cards5)).toBe(false);
+			});
+
+		});
+
+	});
+
 });
